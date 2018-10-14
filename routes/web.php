@@ -17,4 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::post('/clarifai', 'ClarifaiController@index')->name('clarifai');
+
+Route::post('/ios', 'ClarifaiIOSController@index')->name('ios');
+
+Route::post('/calculate', 'CalculateController@index')->name('submit');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', function () {
+    return view('welcome');
+});
